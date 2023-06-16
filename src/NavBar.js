@@ -13,10 +13,21 @@ const linkStyles = {
 
 function NavBar() {
     return (
-        <nav className="navbar">
-
-        </nav>
-    )
+      <nav className="navbar">
+        <NavLink to="/" exact style={linkStyles}>
+          Home Page
+        </NavLink>
+        <NavLink to="/bookslist" exact style={linkStyles}>
+          Books List
+        </NavLink>
+        <NavLink to="/readlater" exact style={linkStyles}>
+          Read Later
+        </NavLink>
+        <NavLink to="/booksread" exact style={linkStyles}>
+          Books Read
+        </NavLink>
+      </nav>
+    );
 }
 
 export default NavBar
