@@ -1,14 +1,15 @@
 import './App.css';
 import React from 'react';
 import NavBar from './NavBar';
-import HomePage from './Homepage';
+import BookForm from './BookForm';
 import BooksList from './BooksList';
 import BooksToRead from './BooksToRead';
 import BooksRead from './BooksRead';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 
-
+//npm run server
+//to run json
 
 function App() {
   return (
@@ -25,8 +26,8 @@ function App() {
         <Route path="/booksread">
           <BooksRead/>
         </Route>
-        <Route path="/">
-          <HomePage/>
+        <Route path="/bookform">
+          <BookForm/>
         </Route>
       </Switch>
     </div>

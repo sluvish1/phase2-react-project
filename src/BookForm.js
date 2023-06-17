@@ -1,12 +1,18 @@
 import React from "react";
+/*
+this componet will let the user enter a book theyve read along with the author and a summary
+and display it on to the BooksList page 
+ */
 
+function BookForm() {
 
-function HomePage() {
-
-
+  function handelBookSubmit(e) {
+     e.preventDefault();
+  
+}
 
   return (
-      <form className="NewBook">
+      <form className="NewBook" onSubmit={handelBookSubmit}>
         <label>
            Book Review: 
           <input type="text" placeholder=" Enter Book Author"></input>
@@ -28,4 +34,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default BookForm;

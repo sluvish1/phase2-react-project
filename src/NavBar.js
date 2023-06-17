@@ -14,8 +14,8 @@ const linkStyles = {
 function NavBar() {
     return (
       <nav className="navbar">
-        <NavLink to="/" exact style={linkStyles}>
-          Home Page
+        <NavLink to="/bookform" exact style={linkStyles}>
+          Book Form
         </NavLink>
         <NavLink to="/bookslist" exact style={linkStyles}>
           Books List
