@@ -8,10 +8,10 @@ import BooksToRead from './BooksToRead';
 import BooksRead from './BooksRead';
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
-
-//npm run server
 //to run json
-// 
+//json-server --watch db.json
+
+
 
 
 function App() {
