@@ -12,25 +12,16 @@ function BookForm() {
 }
 
   return (
-      <form className="NewBook" onSubmit={handelBookSubmit}>
-        <label>
-           Book Review: 
-          <input type="text" placeholder=" Enter Book Author"></input>
-          <input type="text" placeholder=" Enter Book Title"></input>
-          <input type="summury" placeholder=" Enter Book Summury"></input>
-         </label>
-              
-        <label>
-          Book Category:
-          <select name=" book category">
-            <option value="Fantasy">Fantasy</option>
-            <option value="Anime">Anime</option>
-            <option value="Drama">Drama</option>
-            <option value="Triller">Triller</option>
-          </select>
-        </label>
-        <button type="submit">Submit Book</button>
-      </form>
+    <form className="NewBook" onSubmit={handelBookSubmit}>
+      <label>
+        Book Review:
+        <input type="text" placeholder=" Enter Book Author"></input>
+        <input type="text" placeholder=" Enter Book Title"></input>
+        <input type="test" placeholder=" Enter Book Summury"></input>
+        <input type="test" placeholder=" Enter Book Genre"></input> 
+      </label>
+      <button type="submit">Submit Book</button>
+    </form>
   );
 }
 

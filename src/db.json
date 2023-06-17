@@ -4,12 +4,14 @@
         "id":1,
         "title": "Harry Potter",
         "author":"idk",
+        "genre": "Fantasy",
         "summary":"This book is about a boy and his friends who attend wizard school."
     },
     {
         "id":2,
         "title":"Green Eggs and Ham",
         "author": "Dr.Suse",
+        "genre": "Nursery Rhyme",
         "summary": "this book is a nursery rhyme for kids."
     }
 
