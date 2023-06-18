@@ -29,10 +29,6 @@ function App() {
         <Route path="/booksread">
           <BooksRead/>
         </Route>
-        {/* <Route path="/bookform">
-          <BookForm/>
-
-        </Route> */}
       </Switch>
     </div>
   );
