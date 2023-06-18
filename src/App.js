@@ -2,7 +2,7 @@
 import './App.css';
 import React from 'react';
 import NavBar from './NavBar';
-import BookForm from './BookForm';
+//import BookForm from './BookForm';
 import BooksList from './BooksList';
 import BooksToRead from './BooksToRead';
 import BooksRead from './BooksRead';
@@ -21,7 +21,6 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/bookslist">
-
           <BooksList/>
         </Route>
         <Route path="/readlater">
@@ -30,10 +29,10 @@ function App() {
         <Route path="/booksread">
           <BooksRead/>
         </Route>
-        <Route path="/bookform">
+        {/* <Route path="/bookform">
           <BookForm/>
 
-        </Route>
+        </Route> */}
       </Switch>
     </div>
   );

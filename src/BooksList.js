@@ -1,4 +1,5 @@
 import React from "react";
+import BookForm from "./BookForm";
 //import { useState } from "react";
 /* the book list will take in the data from the form and add the new book created
 on to the list and display the books. then the user will be able to go thru all
@@ -9,7 +10,7 @@ function BooksList() {
 
     return (
         <div>
-            <h2>hey</h2>
+           <BookForm/>
         </div>
     )
 }

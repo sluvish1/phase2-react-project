@@ -14,9 +14,9 @@ const linkStyles = {
 function NavBar() {
     return (
       <nav className="navbar">
-        <NavLink to="/bookform" exact style={linkStyles}>
+        {/* <NavLink to="/bookform" exact style={linkStyles}>
           Book Form
-        </NavLink>
+        </NavLink> */}
         <NavLink to="/bookslist" exact style={linkStyles}>
           Books List
         </NavLink>
