@@ -16,8 +16,8 @@ function BookForm() {
   });
 //listens to what the user has entered in the input and use the spread operator to make a copy of the empty form then sets the copy of bookFormData to equal the newly entered data
   function handelInputChange(e) {
-   // console.log(e)
-    setBookFormData({...bookFormData, [e.target.book]: e.target.value})
+    //console.log(e)
+    setBookFormData({...bookFormData, [e.target.name]: e.target.value})
   }
 
 //submits the data the user has entered
@@ -59,7 +59,7 @@ function BookForm() {
             type="text"
             placeholder=" Enter Book Author"
             onChange={handelInputChange}
-            book="author"
+            name="author"
             value={bookFormData.author}
             required
           />
@@ -68,7 +68,7 @@ function BookForm() {
             type="text"
             placeholder=" Enter Book Title"
             onChange={handelInputChange}
-            book="title"
+            name="title"
             value={bookFormData.title}
             required
           />
@@ -76,7 +76,7 @@ function BookForm() {
           <textarea
             placeholder="Summury Of Book"
             onChange={handelInputChange}
-            book="summary"
+            name="summary"
             value={bookFormData.summary}
             required
           />
@@ -84,7 +84,7 @@ function BookForm() {
           <input type="text"
             placeholder=" Enter Book Genre"
             onChange={handelInputChange}
-            book="genre"
+            name="genre"
             value={bookFormData.genre}
             required
           />
