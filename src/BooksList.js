@@ -8,19 +8,23 @@ on to the list and display the books. then the user will be able to go thru all
  later list */
 function BooksList() {
 
-    const[allBooks, setAllBooks]=useState([])
+    const [allBooks, setAllBooks] = useState([])
 
     useEffect(() => {
         fetch(" http://localhost:3000/books")
           .then((r) => r.json())
-          .then((allBooks) => setAllBooks(allBooks));
+          .then((allBooksData) => setAllBooks(allBooksData));
     }, [])
+
+    const displayBooks = allBooks.map((eachBook) => (
+       <BookListCard eachBook={eachBook} />
+    ));
 
   return (
     <div>
           <BookForm />
           <h2>Books To Read</h2>
-          <BookListCard/>
+          {displayBooks}
     </div>
   );
 }

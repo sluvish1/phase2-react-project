@@ -20,14 +20,14 @@ function App() {
       <h1>The BookClub</h1>
       <NavBar />
       <Switch>
-        <Route path="/bookslist">
-          <BooksList/>
-        </Route>
         <Route path="/readlater">
-          <BooksToRead/>
+          <BooksToRead />
         </Route>
         <Route path="/booksread">
-          <BooksRead/>
+          <BooksRead />
+        </Route>
+        <Route path="/">
+          <BooksList />
         </Route>
       </Switch>
     </div>
