@@ -1,8 +1,7 @@
 
 import './App.css';
-import React from 'react';
+import React,{useState} from 'react';
 import NavBar from './NavBar';
-//import BookForm from './BookForm';
 import BooksList from './BooksList';
 import BooksToRead from './BooksToRead';
 import BooksRead from './BooksRead';
@@ -11,23 +10,24 @@ import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 //to run json
 //json-server --watch db.json
 
-
-
-
 function App() {
+  const [allBooks, setAllBooks] = useState([])
+  const [readLater, setReadLater] = useState([])
+ // console.log(allBooks)
+
   return (
     <div className="App">
       <h1>The BookClub</h1>
       <NavBar />
       <Switch>
         <Route path="/readlater">
-          <BooksToRead />
+          <BooksToRead allBooks={allBooks} readLater={readLater} setReadLater={setReadLater} />
         </Route>
         <Route path="/booksread">
-          <BooksRead />
+          <BooksRead allBooks={allBooks} />
         </Route>
         <Route path="/">
-          <BooksList />
+          <BooksList allBooks={allBooks} setAllBooks={setAllBooks}readLater={readLater} setReadLater={setReadLater} />
         </Route>
       </Switch>
     </div>

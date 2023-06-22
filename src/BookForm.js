@@ -12,7 +12,7 @@ and display it on to the BooksList page
 
  */
 
-function BookForm() {
+function BookForm({allBooks, setAllBooks}) {
 
   //set the value of the form to be empty
   const [bookFormData, setBookFormData] = useState({
@@ -25,7 +25,6 @@ function BookForm() {
 //listens to what the user has entered in the input and use the spread operator to make a copy of the empty form then sets the copy of bookFormData to equal the newly entered data
   function handelInputChange(e) {
     //console.log(e)
-    e.preventDefault()
     setBookFormData({ ...bookFormData, [e.target.name]: e.target.value })
     //console.log(e)
   }
@@ -49,7 +48,13 @@ function BookForm() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newBook),
-    });
+    })
+      .then((newBook) => {
+      return newBook.json()
+      })
+      .then((newBook) => {
+      setAllBooks([...allBooks, newBook ])
+    })
 
     //this will set the form back to empty once the user hits submit
     setBookFormData({

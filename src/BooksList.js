@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect} from "react";
 import BookForm from "./BookForm";
 import BookListCard from "./BookListCard";
 
@@ -6,25 +6,33 @@ import BookListCard from "./BookListCard";
 on to the list and display the books. then the user will be able to go thru all
  the books that are on the list and add the ones their intrested in onto their read
  later list */
-function BooksList() {
+function BooksList({ readLater, setReadLater, allBooks, setAllBooks }) {
+  // function handelButtonClick() {
 
-    const [allBooks, setAllBooks] = useState([])
+  // 
 
-    useEffect(() => {
-        fetch(" http://localhost:3000/books")
-          .then((r) => r.json())
-          .then((allBooksData) => setAllBooks(allBooksData));
-    }, [])
+  useEffect(() => {
+    fetch(" http://localhost:3000/books")
+      .then((r) => r.json())
+      .then((allBooksData) => setAllBooks(allBooksData));
+  }, []);
 
-    const displayBooks = allBooks.map((eachBook) => (
-       <BookListCard eachBook={eachBook} />
-    ));
+  const displayBooks = allBooks.map((eachBook) => (
+    <BookListCard
+      eachBook={eachBook}
+      key={eachBook.id}
+      allBooks={allBooks}
+      setAllBooks={setAllBooks}
+      readLater={readLater}
+      setReadLater={setReadLater}
+    />
+  ));
 
   return (
     <div>
-          <BookForm />
-          <h2>Books To Read</h2>
-          {displayBooks}
+      <BookForm allBooks={allBooks} setAllBooks={setAllBooks } />
+      <h2>Books To Read</h2>
+      {displayBooks}
     </div>
   );
 }
