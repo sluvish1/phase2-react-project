@@ -1,7 +1,23 @@
 import React from "react";
 
-function BooksToReadCard({eachBook}) {
+function BooksToReadCard({eachBook,readLater,setReadLater}) {
+   // console.log(readLater)
 
+//readLater is now the holder of all the books on this page.
+    function handelBooksCompleted() {
+    const booksCompleted = readLater.filter((booksNotFinished) => {
+          if (eachBook !== booksNotFinished) {
+           return booksNotFinished;
+          }
+    });
+       setReadLater(booksCompleted)
+    }
+
+    function handelRemoveBook() {
+        return (
+            console.log("book deleted")
+        )
+    }
 
 
 
@@ -12,8 +28,8 @@ function BooksToReadCard({eachBook}) {
           <p><b>Summary:</b> {eachBook.summray}</p>
             <p><b>Genre:</b>{eachBook.genre} </p>
           <img src={eachBook.image} alt={eachBook.title} />
-          <button type="submit">Remove Book</button> 
-          <button type="submit">Completed Book</button>
+          <button type="submit" onClick={handelRemoveBook}>Remove Book</button> 
+          <button type="submit" onClick={handelBooksCompleted}>Completed Book</button>
       </div>
     );
 }
