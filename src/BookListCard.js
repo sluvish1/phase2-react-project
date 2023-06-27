@@ -15,6 +15,7 @@ function BookListCard({eachBook, allBooks, setAllBooks, readLater, setReadLater}
    })
     //setAllBooks to the book that are left on the page.
     setAllBooks(books)
+    console.log(books)
     //making a copy of the readLater array and add the books we want to read later to it
     setReadLater([...readLater, eachBook])
 }

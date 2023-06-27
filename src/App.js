@@ -1,6 +1,6 @@
 
 import './App.css';
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import NavBar from './NavBar';
 import BooksList from './BooksList';
 import BooksToRead from './BooksToRead';
@@ -14,7 +14,13 @@ function App() {
   const [allBooks, setAllBooks] = useState([])
   const [readLater, setReadLater] = useState([])
   const [booksCompleted, setBooksCompleted] = useState([])
- // console.log(allBooks)
+
+// console.log(setReadLater)
+   useEffect(() => {
+     fetch(" http://localhost:3000/books")
+       .then((r) => r.json())
+       .then((allBooksData) => setAllBooks(allBooksData));
+   }, []);
 
   return (
     <div className="App">
@@ -34,7 +40,8 @@ function App() {
           <BooksRead
             allBooks={allBooks}
             booksCompleted={booksCompleted}
-            setBooksCompleted={setBooksCompleted} />
+            setBooksCompleted={setBooksCompleted}
+          />
         </Route>
         <Route path="/">
           <BooksList

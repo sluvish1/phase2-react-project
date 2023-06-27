@@ -7,16 +7,7 @@ on to the list and display the books. then the user will be able to go thru all
  the books that are on the list and add the ones their intrested in onto their read
  later list */
 function BooksList({ readLater, setReadLater, allBooks, setAllBooks }) {
-  // function handelButtonClick() {
-
-  // 
-
-  useEffect(() => {
-    fetch(" http://localhost:3000/books")
-      .then((r) => r.json())
-      .then((allBooksData) => setAllBooks(allBooksData));
-  }, []);
-
+ 
   const displayBooks = allBooks.map((eachBook) => (
     <BookListCard
       eachBook={eachBook}
@@ -30,7 +21,9 @@ function BooksList({ readLater, setReadLater, allBooks, setAllBooks }) {
 
   return (
     <div>
-      <BookForm allBooks={allBooks} setAllBooks={setAllBooks } />
+      <BookForm
+        allBooks={allBooks}
+        setAllBooks={setAllBooks} />
       <h2>Books To Read</h2>
       {displayBooks}
     </div>

@@ -3,17 +3,18 @@ import BooksToReadCard from "./BooksToReadCard";
 allow the user to delete the books if their no longer interested or if the user has read the book
 it can then be added onto the books Read */
 
-function BooksToRead({readLater, setreadLater }) {
+function BooksToRead({ readLater, setReadLater, booksCompleted, setBooksCompleted }) {
+  const booksReadingLater = readLater.map((eachBook) => (
+      <BooksToReadCard
+          eachBook={eachBook}
+          key={eachBook.id}
+          setReadLater={setReadLater}
+          readLater={readLater}
+          booksCompleted={booksCompleted}
+          setBooksCompleted={setBooksCompleted} />
+  ));
 
-    const booksReadingLater = readLater.map((eachBook) => (
-        <BooksToReadCard eachBook={eachBook} key={eachBook.id} setreadLater={setreadLater} readLater={readLater } />
-))
-
-  return (
-    <div>
-      {booksReadingLater}
-    </div>
-  );
+  return <div>{booksReadingLater}</div>;
 }
 
 export default BooksToRead
