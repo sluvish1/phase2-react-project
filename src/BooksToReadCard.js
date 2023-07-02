@@ -1,21 +1,33 @@
 import React from "react";
 
+  const styling = {
+    width: "140px",
+  };
+
 function BooksToReadCard({ eachBook, readLater, setReadLater, setBooksCompleted, booksCompleted }) {
+
   // console.log(readLater)
 
   //readLater is now the holder of all the books on this page.
   function handelBooksCompleted() {
+    //filters through all the books on the list and will remove all the books that are completed and return all of the uncompleted books on the page.
     const booksFinished = readLater.filter((booksNotFinished) => {
       if (eachBook !== booksNotFinished) {
         return booksNotFinished;
       }
     });
+    //this will set all the 
     setReadLater(booksFinished);
     setBooksCompleted([...booksCompleted, eachBook]);
   }
 
+//fumction not working
   function handelRemoveBook() {
-    
+    readLater.filter((bookRemoved) => {
+      if (eachBook === bookRemoved) {
+        return bookRemoved
+      }
+    })
   }
 
   return (
@@ -32,7 +44,7 @@ function BooksToReadCard({ eachBook, readLater, setReadLater, setBooksCompleted,
         <b>Genre:</b>
         {eachBook.genre}{" "}
       </p>
-      <img src={eachBook.image} alt={eachBook.title} />
+      <img src={eachBook.image} alt={eachBook.title} style={styling}/>
       <button type="submit" onClick={handelRemoveBook}>
         Remove Book
       </button>
