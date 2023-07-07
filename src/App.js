@@ -21,7 +21,7 @@ function App() {
        .then((r) => r.json())
        .then((allBooksData) => setAllBooks(allBooksData));
    }, []);
-
+console.log(allBooks);
   return (
     <div className="App">
       <h1>The BookClub</h1>
@@ -34,6 +34,7 @@ function App() {
             setReadLater={setReadLater}
             booksCompleted={booksCompleted}
             setBooksCompleted={setBooksCompleted}
+            setAllBooks={setAllBooks}
           />
         </Route>
         <Route path="/booksread">

@@ -4,7 +4,7 @@ import React from "react";
     width: "140px",
   };
 
-function BooksToReadCard({ eachBook, readLater, setReadLater, setBooksCompleted, booksCompleted }) {
+function BooksToReadCard({ eachBook, readLater, setReadLater, setBooksCompleted, booksCompleted, allBooks, setAllBooks}) {
 
   // console.log(readLater)
 
@@ -21,13 +21,16 @@ function BooksToReadCard({ eachBook, readLater, setReadLater, setBooksCompleted,
     setBooksCompleted([...booksCompleted, eachBook]);
   }
 
-//fumction not working
+//function not working
   function handelRemoveBook() {
-    readLater.filter((bookRemoved) => {
-      if (eachBook === bookRemoved) {
+   const removeBook = readLater.filter((bookRemoved) => {
+      if (eachBook !== bookRemoved) {
         return bookRemoved
       }
-    })
+   })
+    setReadLater(removeBook)
+    console.log(allBooks)
+    setAllBooks([...allBooks, eachBook]);
   }
 
   return (
