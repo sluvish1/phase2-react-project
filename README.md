@@ -14,7 +14,5 @@ books theyre intrested in, the user could also contribute any books theyve read 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open (http://localhost:3001/) to view it in your browser.
+Open (http://localhost:3000/books) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
