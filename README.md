@@ -11,8 +11,8 @@ books theyre intrested in, the user could also contribute any books theyve read 
 
 
 
-### `npm start`
+How to Start the App:
 
-Runs the app in the development mode.\
-Open (http://localhost:3000/books) to view it in your browser.
+run "json-server --watch db.json" in the terminal next run "npm start"
+
 
